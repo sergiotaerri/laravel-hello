@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\EnderecoController;
 use Illuminate\Support\Facades\Route;
 
-Use App\Endereco;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,20 +14,8 @@ Use App\Endereco;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-
-Route::get('/', function (){
-    echo 'hi';
-});
- 
-Route::apiResources('enderecos', EnderecoController::class);
-
-// Route::get('enderecos', 'EnderecoController@index');
-// Route::get('enderecos/{endereco}', 'EnderecoController@show');
-// Route::post('enderecos', 'EnderecoController@store');
-// Route::put('enderecos/{endereco}', 'EnderecoController@update');
-// Route::delete('enderecos/{endereco}', 'EnderecoController@delete');
+Route::get('/enderecos', [EnderecoController::class, 'index']);
+Route::get('/enderecos/{id}', [EnderecoController::class, 'show']);
+Route::post('/enderecos', [EnderecoController::class, 'store']);
+Route::put('/enderecos/{id}', [EnderecoController::class, 'update']);
+Route::delete('/enderecos/{id}', [EnderecoController::class, 'delete']);
