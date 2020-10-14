@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Endereco;
 use Illuminate\Http\Request;
+use App\Http\Requests\EnderecoValidated;
 
 class  EnderecoController extends Controller
 {
@@ -24,9 +25,11 @@ class  EnderecoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Endereco $request)
     {
-        $endereco = Endereco::create($request->all());
+        $endereco_validado = $request->validated()
+
+        $endereco = Endereco::create($endereco_validado);
         return response()->json($endereco, 201);
     }
 
@@ -48,7 +51,7 @@ class  EnderecoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(Endereco $request, $id)
     {
         $endereco = Endereco::findOrFail($id);
 

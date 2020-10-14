@@ -1,0 +1,16 @@
+POST https://localhost:8002/enderecos HTTP/1.1
+content-type: application/json
+
+
+{
+    "cep" : "49100",
+    "logradouro" : "eduardo",
+    "complemento" : "gomes",
+    "bairro" : "rosa elze",
+    "localidade" : "ali",
+    "uf" : "se",
+    "ibge" : "num sei",
+    "gia" : "123",
+    "ddd" : "79",
+    "siafi" : "num sei tb",
+}

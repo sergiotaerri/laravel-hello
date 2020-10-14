@@ -1,6 +1,8 @@
+#Lembrar de referenciar no .env o ip do container (docker container inspect)
+
 docker run --name api-hello -v $(pwd):/app -p 8002:80 -it -d -w /app webdevops/php-apache-dev:7.4
 
-docker run --name hello-api-db -v /mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 mysql:5.7.31
+docker run --name api-db -v /mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 mysql:5.7.31
 
 docker exec -ti api-hello bash
 
