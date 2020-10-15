@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: 'API de Endereço'
+  version: 1.0.0
+paths:
+  /enderecos:
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: 'Adiciona um endereço'
+      operationId: 'App\Http\Controllers\EnderecoController::store'
+      responses:
+        '201':
+          description: 'Recourse created'

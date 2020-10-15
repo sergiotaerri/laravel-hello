@@ -8,3 +8,4 @@ docker exec -ti api-hello bash
 
 docker exec -it hello-api-db bash
 
+https://quickadminpanel.com/blog/laravel-api-documentation-with-openapiswagger/
